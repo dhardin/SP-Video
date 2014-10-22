@@ -1,0 +1,23 @@
+.icon-video {
+    background-image: url("../img/video controls.gif");
+    background-position: 24px 32px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 32px;
+    line-height: 32px;
+    vertical-align: text-bottom;
+    width: 24px;
+}
+
+.icon-video.white  {
+	-webkit-filter: invert(100%);
+	-moz-filter: invert(100%);
+	-ms-filter: invert(100%);
+	-o-filter: invert(100%);
+	filter: invert(100%);
+}
+
+.icon-video.icon-play{ background-position: 0 0;  } 
+.icon-video.icon-pause{ background-position: -24px 0;  } 
+.icon-video.icon-volume{ background-position: -48px 0;  } 
+ 

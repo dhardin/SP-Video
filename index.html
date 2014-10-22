@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http=equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="utf-8" />
+    <link rel="Stylesheet" type="text/css" href="lib/jquery ui/jquery-ui.css"/> 
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="lib/foundation/css/foundation.css"/>
+
+    <script type="text/javascript" src="lib/jquery.js"></script>
+    <script type="text/javascript" src="lib/foundation/js/foundation.min.js"></script>
+    <script type="text/javascript" src="lib/foundation/js/vendor/modernizr.js"></script>
+    <script type="text/javascript" src="lib/underscore.js"></script>
+    <script type="text/javascript" src="lib/backbone.js"></script>
+    <script type="text/javascript" src="lib/pie/pie.js"></script>
+    <script type="text/javascript" src="lib/html5shiv/html5shiv.js"></script>
+    <script type="text/javascript" src="lib/respond.min.js"></script>
+
+</head>
+<body>
+    <div id="main"></div>
+
+    
+    <script type="text/template" id="browse-template">
+          <nav class="top-bar" data-topbar role="navigation">
+              <ul class="title-area">
+                <li class="name">
+                  <h1><a href="#">SharePoint Videos</a></h1>
+                </li>
+                 <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+              </ul>
+
+              <section class="top-bar-section">
+                <!-- Right Nav Section -->
+                <ul class="right">
+                  
+                </ul>
+
+                <!-- Left Nav Section -->
+                <ul class="left">
+                      <li class="has-form">
+                      <div class="row collapse">
+                        <div class="large-8 small-9 columns">
+                          <input id="search" type="text" placeholder="Search Videos">
+                        </div>
+                        <div class="large-4 small-3 columns">
+                          <a id="clearSearch" class="alert button tiny">X</a>
+                        </div>
+                      </div>
+                    </li>
+                </ul>
+              </section>
+        </nav>
+
+        <section class="main-section">
+             <div id="video-container"></div>
+            <div  id="video_collection"></div>
+        </section>
+    </script>
+
+    <script type="text/template" id="video-template">
+        <a href="#" class="close button tiny alert">Close</a>
+        <div id="vid">
+            <video id="video" controls preload="metadata" poster="videos/<%=title%>.png">
+                <source src="videos/<%=title%>.mp4" type="video/mp4">
+                <source src="videos/<%=title%>.webm" type="video/webm">
+                <source src="videos/<%=title%>.ogg" type="video/ogg">
+                <!-- Flash fallback -->
+                <object type="application/x-shockwave-flash" data="flash-player.swf?videoUrl=videos/tears-of-steel-battle-clip-medium.mp4" >
+                <param name="movie" value="flash-player.swf?videoUrl=videos/tears-of-steel-battle-clip-medium.mp4" />
+                <param name="allowfullscreen" value="true" />
+                <param name="wmode" value="transparent" />
+                <param name="flashvars" value="controlbar=over&amp;image=videos/<%=title%>.png&amp;file=flash-player.swf?videoUrl=videos/<%=title%>.mp4" />
+                <img alt="<%=title%> poster image" src="videos/<%=title%>.png" title="No video playback possible, please download the video from the link below" />
+                </object>
+                <!-- Offer download -->
+                <a href="videos/<%=title%>.mp4">Download MP4</a>
+            </video>
+        </div>
+            <div id="tag-container">
+                <h4 class="subheader">Tags</h4>
+                <ul id="tags" class="inline-list"></ul>
+            </div>
+    </script>
+
+    <script type="text/template" id="video-collection-template">
+        <div id="videos"></div>
+    </script>
+
+    <script type="text/template" id="list-item-container-template">
+        <ul class="small-block-grid-3"></ul>
+    </script>
+
+    <script type="text/template" id="video-list-item-template">
+        <div class="video-list-item">
+            <img src="videos/<%=title%>.png"/>
+            <div class="details">
+                <h3><%=title%></h3>
+                <p class="show-for-medium-up"><%=description%></p>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="noVideosTemplate">
+        <p>You don't seem to have any videos :(</p>
+        <p>Let's try adding some!</p>
+    </script>
+
+    
+    <!-- Models -->
+    <script src="js/models/video.js"></script>
+    <script src="js/models/library.js"></script>
+    <!-- Views -->
+    <script src="js/views/video.js"></script>
+    <script src="js/views/video-list-item.js"></script>
+    <script src="js/views/library.js"></script>
+    <script src="js/views/browse.js"></script>
+    <script src="js/views/app.js"></script>
+    <!-- Application -->
+    <script src="js/app.js"></script>
+    <!-- Router -->
+    <script src="js/routes/routes.js"></script>
+
+    <script type="text/javascript">
+        $(document).foundation(); 
+    </script>
+    
+    </body>
+    </html>
