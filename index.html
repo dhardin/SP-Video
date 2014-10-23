@@ -60,9 +60,9 @@
     </script>
 
     <script type="text/template" id="video-template">
-        <a href="#" class="close button tiny alert">Close</a>
+        <a href="#" class="close button tiny alert right">Close</a>
         <div id="vid">
-            <video id="video" controls preload="metadata" poster="videos/<%=title%>.png">
+            <video id="video" controls preload="metadata" poster="videos/<%=title%>.jpg">
                 <source src="videos/<%=title%>.mp4" type="video/mp4">
                 <source src="videos/<%=title%>.webm" type="video/webm">
                 <source src="videos/<%=title%>.ogg" type="video/ogg">
@@ -71,8 +71,8 @@
                 <param name="movie" value="flash-player.swf?videoUrl=videos/tears-of-steel-battle-clip-medium.mp4" />
                 <param name="allowfullscreen" value="true" />
                 <param name="wmode" value="transparent" />
-                <param name="flashvars" value="controlbar=over&amp;image=videos/<%=title%>.png&amp;file=flash-player.swf?videoUrl=videos/<%=title%>.mp4" />
-                <img alt="<%=title%> poster image" src="videos/<%=title%>.png" title="No video playback possible, please download the video from the link below" />
+                <param name="flashvars" value="controlbar=over&amp;image=videos/<%=title%>.jpg&amp;file=flash-player.swf?videoUrl=videos/<%=title%>.mp4" />
+                <img alt="<%=title%> poster image" src="videos/<%=title%>.jpg" title="No video playback possible, please download the video from the link below" />
                 </object>
                 <!-- Offer download -->
                 <a href="videos/<%=title%>.mp4">Download MP4</a>
@@ -85,16 +85,12 @@
     </script>
 
     <script type="text/template" id="video-collection-template">
-        <div id="videos"></div>
-    </script>
-
-    <script type="text/template" id="list-item-container-template">
-        <ul class="small-block-grid-3"></ul>
+         <ul id="videos" class="small-block-grid-2 medium-block-grid-3 large-block-grid-4"></ul>
     </script>
 
     <script type="text/template" id="video-list-item-template">
         <div class="video-list-item">
-            <img src="videos/<%=title%>.png"/>
+            <img class="th" src="videos/<%=title%>.jpg"/>
             <div class="details">
                 <h3><%=title%></h3>
                 <p class="show-for-medium-up"><%=description%></p>

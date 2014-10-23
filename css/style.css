@@ -9,9 +9,6 @@ body{
     padding-bottom: 10px;
     padding-top: 10px;
 }
-#video-container .close {
-  float: right;
-}
 #vid {
   width: 60%;
   min-width: 350px;
@@ -83,6 +80,10 @@ video, object {
   cursor: pointer;
 }
 
+.video-list-item img {
+  
+}
+
 .video-list-item:hover, .tag:hover {
     /* IE 8 */
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
@@ -101,8 +102,7 @@ video, object {
 }
 
 .video-list-item img {
-  width: 100%;
-  min-width: 120px;
+
 }
 .video-list-item .details {
 }

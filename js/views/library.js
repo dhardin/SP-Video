@@ -15,9 +15,7 @@ app.LibraryView = Backbone.View.extend({
 	},
 
 	render: function (collection, isFiltered) {
-		var index = 0, numItemsPerRow = 3,
-			$container, 
-			totalItems,
+		var totalItems,
 			numItemsDisplayed;
 		if(!collection){
 			this.$el.html(this.template());
@@ -30,12 +28,7 @@ app.LibraryView = Backbone.View.extend({
 		if (!isFiltered){
 			if (collection.length > 0){
 				collection.each(function(item){
-				if(index % numItemsPerRow == 0){
-					$container = $($('#list-item-container-template').html());
-					this.$videos.append($container);
-				}
-				this.renderVideo(item, $container);
-				index++;
+				this.renderVideo(item);
 			}, this);
 			} else {
 				this.$videos.html($('#noVideosTemplate').html());
@@ -46,12 +39,7 @@ app.LibraryView = Backbone.View.extend({
 
 			this.$videos.html('Displaying ' + numItemsDisplayed + ' out of ' + totalItems);
 			collection.each(function(item){
-				if(index % numItemsPerRow == 0){
-					$container = $($('#list-item-container-template').html());
-					this.$videos.append($container);
-				}
-				this.renderVideo(item, $container);
-				index++;
+				this.renderVideo(item);
 			}, this);
 		}
 
